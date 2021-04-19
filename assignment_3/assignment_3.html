@@ -1,0 +1,186 @@
+<html>
+	<head>
+		<title>Assignment 3</title>
+		<style>
+			#redNum, #orangeNum, #blueNum {
+				font-size: 500%;
+				background-color: Transparent;
+				border: none;
+			}
+			
+			.content {
+				max-width:500px;
+				margin: auto;
+			}
+		</style>
+		<script>
+			var numChosen;
+			var score;
+			var setNums;
+			var num1;
+			var num2;
+			var num3;
+			
+			function getNumber() {
+				numChosen = prompt("Enter a number between 0 to 9: ");
+				
+				if (/^[0-9]$/.test(numChosen) == false) {
+					getNumber();
+				} else {
+					document.getElementById("numEntered").innerHTML = numChosen;
+					document.getElementById("scoreEarned").innerHTML = 0;
+					score = 0;
+					startGame();
+				}
+			}
+			
+			function startGame() {
+				setNums = setInterval(randomNums, 2000);
+			}
+			
+			function randomNums() {
+				num1 = Math.floor(Math.random() * 10);
+			
+				do {
+					num2 = Math.floor(Math.random() * 10);
+				} 
+				while (num2 == num1);
+				
+				do {
+					num3 = Math.floor(Math.random() * 10);
+				} 
+				while (num3 == num1 || num3 == num2)
+			
+				document.getElementById("redNum").innerHTML = num1;
+				document.getElementById("orangeNum").innerHTML = num2;
+				document.getElementById("blueNum").innerHTML = num3;
+			}
+			
+			function redPress() {
+				if (num1 == numChosen) {
+					document.getElementById("scoreEarned").innerHTML = score + 1;
+					score = score + 1;
+				} else {
+					document.getElementById("scoreEarned").innerHTML = score - 1;
+					score = score - 1;
+				}
+			}
+			
+			function orangePress() {
+				if (num2 == numChosen) {
+					document.getElementById("scoreEarned").innerHTML = score + 1;
+					score = score + 1;
+				} else {
+					document.getElementById("scoreEarned").innerHTML = score - 1;
+					score = score - 1;
+				}
+			}
+			
+			function bluePress() {
+				if (num3 == numChosen) {
+					document.getElementById("scoreEarned").innerHTML = score + 1;
+					score = score + 1;
+				} else {
+					document.getElementById("scoreEarned").innerHTML = score - 1;
+					score = score - 1;
+				}
+			}
+			
+			function endGame() {
+				clearInterval(setNums);
+			}
+		</script>
+	</head>
+	<body>
+	
+	<div class="content">
+		<h3>Part 1</h3>
+		<table border="1">
+			<tr>
+				<th colspan="2", style="text-align:left">STUDENT DETAILS</th>
+			</tr>
+			<tr>
+				<td>STUDENT NUMBER</td>
+				<td>XXX</td>
+			</tr>
+			<tr>
+				<td>STUDENT FAMILY NAME</td>
+				<td>XXX</td>
+			</tr>
+			<tr>
+				<td>STUDENT GIVEN NAMES</td>
+				<td>XXX</td>
+			</tr>
+			<tr>
+				<td>UOW EMAIL</td>
+				<td>XXX</td>
+			</tr>
+			<tr>
+				<th colspan="2", style="text-align:left">ASSIGNMENT DETAILS</th>
+			</tr>
+			<tr>
+				<td>SUBJECT CODE</td>
+				<td>CSIT128</td>
+			</tr>
+			<tr>
+				<td>SUBJECT NAME</td>
+				<td>INTRODUCTION TO WEB TECHNOLOGY</td>
+			</tr>
+			<tr>
+				<td>ASSIGNMENT NUMBER</td>
+				<td>Y202001-A3</td>
+			</tr>
+			<tr>
+				<td>ASSIGNMENT DUE DATE</td>
+				<td>18 Feburary 2020</td>
+			</tr>
+			<tr>
+				<td>LAB TIME</td>
+				<td>24 Feburary 8:30 am - 11:30 am</td>
+			</tr>
+		</table>
+		</br>
+		<h3>Part 2</h3>
+		<button type="button" onclick="getNumber()">Start game</button><button type="button" onClick="endGame()">Stop game</button><br>
+		<table>
+		<tr>
+			<td>
+				Your chosen number is: 
+			</td>
+			<td>
+				<div id="numEntered" style="color: green"></div> 
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Your score so far: 
+			</td>
+			<td>
+				<div id="scoreEarned" style="color: red"></div>
+			</td>
+		</tr>
+		</table>
+		<table>
+			<tr>
+				<td>
+					<button id="redNum" onClick="redPress()" style="color: red;"></button>
+				</td>
+				<td>
+					&nbsp;
+				</td>
+				<td>
+					<button id="orangeNum" onClick="orangePress()" style="color: orange;"></button>
+				</td>
+				<td>
+					&nbsp;
+				</td>
+				<td>
+					<button id="blueNum" onClick="bluePress()" style="color: blue;"></button>
+				</td>
+			</tr>
+		</table>
+		</br>
+	</div>
+		
+	</body>
+</html>
