@@ -1,0 +1,266 @@
+<html>
+<head>
+<title>Test title</title>
+<style>
+.boxsizing {
+	box-sizing: border-box;
+}
+
+.whitetb {
+	border: none;
+	border-radius: 3px;
+	padding: 6px 3px;
+}
+
+.button {
+	background-color: lightgrey;
+	padding: 2px 4px;
+	border: none;
+	border: solid 1px;
+	border-radius:3px;
+}
+
+.tb {
+	border: solid 1px;
+	border-color: lightgrey;
+	border-radius: 3px;
+	padding: 4px 6px;
+}
+
+.bluebutton {
+	border: none;
+	background-color: 11bcd7;
+	color: white;
+	padding: 5px 45px;
+	border-radius: 3px;
+	font-size: 16px;
+}
+</style>
+</head>
+<body>
+<!-- Part 1 -->
+<table border="1">
+	<tr>
+		<th colspan="2", style="text-align:left">STUDENT DETAILS</th>
+	</tr>
+	<tr>
+		<td>STUDENT NUMBER</td>
+		<td>XXX</td>
+	</tr>
+	<tr>
+		<td>STUDENT FAMILY NAME</td>
+		<td>XXX</td>
+	</tr>
+	<tr>
+		<td>STUDENT GIVEN NAMES</td>
+		<td>XXX</td>
+	</tr>
+	<tr>
+		<td>UOW EMAIL</td>
+		<td>XXX</td>
+	</tr>
+	<tr>
+		<th colspan="2", style="text-align:left">ASSIGNMENT DETAILS</th>
+	</tr>
+	<tr>
+		<td>SUBJECT CODE</td>
+		<td>CSIT128</td>
+	</tr>
+	<tr>
+		<td>SUBJECT NAME</td>
+		<td>INTRODUCTION TO WEB TECHNOLOGY</td>
+	</tr>
+	<tr>
+		<td>ASSIGNMENT NUMBER</td>
+		<td>Y202001</td>
+	</tr>
+	<tr>
+		<td>ASSIGNMENT DUE DATE</td>
+		<td>18 January 2020</td>
+	</tr>
+	<tr>
+		<td>LAB TIME</td>
+		<td>22 Jan 3:30 pm - 6:30 pm</td>
+	</tr>
+</table>
+</br>
+
+<!-- Part 2: form 1 -->
+<font face="Arial">
+<table width="50%" cellpadding="20"><form>
+	<tr>
+		<td bgcolor="#b0c6de">
+			<h3>Choose Advanced Search Options</h3>
+			<div align="left"><font size="2">
+				<input type="checkbox" name="options" value="msr">Multi-Subject Resources<br/>
+				<input type="checkbox" name="options" value="dt">Dissertations and Theses<br/>
+				<input type="checkbox" name="options" value="cns">Current News Sources<br/>
+				<input type="checkbox" name="options" value="books">Books<br/>
+				<input type="checkbox" name="options" value="aha">Arts & Humanities Articles<br/>
+				<input type="checkbox" name="options" value="ba">Business Articles<br/>
+				<input type="checkbox" name="options" value="edua">Education Articles<br/>
+				<input type="checkbox" name="options" value="enda">Engineering Articles<br/>
+				<input type="checkbox" name="options" value="hsa">Health Science Articles<br/>
+				<input type="checkbox" name="options" value="ias">Inernational and Area Studies<br/>
+				<input type="checkbox" name="options" value="lsa">Life Sciences Articles<br/>
+				<input type="checkbox" name="options" value="lisa">Library & Information Science Articles<br/>
+				<input type="checkbox" name="options" value="mpa">Music / Performing Arts<br/>
+				<input type="checkbox" name="options" value="psma">Physical Sciences / Math articles<br/>
+				<input type="checkbox" name="options" value="ssa">Social Sciences Articles<br/>
+				<input type="checkbox" name="options" value="wse">Web Search Engines<br/>
+				<input type="checkbox" name="options" value="de">Dictionaries, Encyclopedias, etc<br/>
+				<input type="checkbox" name="options" value="is">Image Search<br/>
+				<input type="checkbox" name="options" value="ds">Datasets
+			</div></font>
+		</td>
+		
+		<td valign="top" bgcolor="#042544" style="color:#FFFFFF" align="center">
+			<h3>Enter Advanced Search Terms</h3>
+			<font size="2">
+			Keywords:<br/>
+			<input type="text" name="keywords" size="55" class="whitetb"><br/><br/>
+			
+			Title Words:<br/>
+			<input type="text" name="titlewords" size="55" class="whitetb"><br/><br/>
+			
+			Author's Name:<br/><br/>
+			</font>
+			<table style="width:100%">
+				<tr>
+					<td width="40%", style="color:#FFFFFF; font-size: 13px">Last name</td>
+					<td width="40%", style="color:#FFFFFF; font-size: 13px">First name</td>
+					<td width="20%", style="color:#FFFFFF; font-size: 13px">Initial</td>
+				</tr>
+				<tr>
+					<td><input type="text", name="lastname", size="15" class="whitetb"></td>
+					<td><input type="text", name="firstname", size="15" class="whitetb"></td>
+					<td><input type="text", name="inital", size="4", maxlength="1", class="whitetb"></td>
+				</tr>
+			</table>
+			<input type="submit", value="Perform Search" class="button">
+		</td>
+	</tr>
+</table></form>
+</br>
+
+<!-- Part 3: form 2 -->
+<table width="50%"><tr><td>
+<hr>
+<b>Select the type of Gift Card</b>
+<hr style="height:1px;border-width:0;color:gray;background-color:gray">
+<form>
+<table>
+	<tr>
+		<td><input type="radio" name="card" value="phy"></td>
+		<td><big>Physical Gift Card</big></td>
+		<td><input type="radio" name="card" value="dig"></td>
+		<td><big>Digital Gift Card</big></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td><small>A traditional gift card that is personalised and delieverd to the recipient's doorstep. It can be used both online and in-store.</small></td>
+		<td></td>
+		<td><small>Digital cards are sent by email within minutes and can be redeemed both in stores and online.</small></td>
+	</tr>
+</table>
+<hr>
+<b>Personalise your Gift Card</b>
+<hr style="height:1px;border-width:0;color:gray;background-color:gray">
+<small>Gift Card Value </small><input type="text" name="gcv" class="tb"> e.g., 100
+<br/><br/>
+<hr style="height:1px;border-width:0;color:gray;background-color:gray">
+<table cellpadding="10">
+	<tr>
+		<td valign="top">
+			<form>
+			<table width="100%">
+			<tr>
+				<td><small>
+				Name
+				</small></td>
+				<td align="right">
+					<input type="text" name="name" size="42" class="tb">
+				</td>
+			</tr>
+			<tr>
+				<td><small>
+					To Email
+				</small></td>
+				<td align="right">
+					<input type="text" name="email" size="42" class="tb">
+				</td>
+			</tr>
+			</table><br/>
+			
+			Postal address<br/>
+			<textarea name="address" rows="6" cols="42" class="tb">
+			</textarea>
+			<br/><br/>
+			
+			Custom greeting<br/>
+			<textarea name="greeting" rows="6" cols="42" class="tb">
+			</textarea>
+		</td>
+		<td>
+			<!-- space column to seperate pages -->
+			&emsp;
+		</td>
+		<td valign="top">
+			<b><big>Payment</big></b><br/><br/>
+			<small>Card Type<br/>
+			<select name="payment" class="tb">
+				<option value="visa">Visa</option>
+				<option value="mc">Mastercard</option>
+				<option value="ae">American Express</option>
+			</select><br/><br/>
+			
+			Card Number<br/>
+			<input type="text" name="cardnum" size="30" class="tb"><br/><br/>
+			
+			Valid to<br/>
+			<select name="month" class="tb">
+				<option value="01">01</option>
+				<option value="02">02</option>
+				<option value="03">03</option>
+				<option value="04">04</option>
+				<option value="05">05</option>
+				<option value="06">06</option>
+				<option value="07">07</option>
+				<option value="08">08</option>
+				<option value="09">09</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+			</select> / 
+			<select name="year" class="tb">
+				<option value="2018">2018</option>
+				<option value="2019">2019</option>
+				<option value="2020">2020</option>
+				<option value="2021">2021</option>
+				<option value="2022">2022</option>
+				<option value="2023">2023</option>
+				<option value="2024">2024</option>
+				<option value="2025">2025</option>
+				<option value="2026">2026</option>
+				<option value="2027">2027</option>
+			</select><br/>
+			<font color="grey">mm / yyyy</font>
+			<br/><br/>
+			
+			Name on card<br/>
+			<input type="text" name="noc" size="30" class="tb"><br/><br/>
+			
+			CVV2 NUMBER</small><br/>
+			<input type="text" name="cnum" size="10" maxlength="3" class="tb"><br/><br/>
+			<input type="submit" value="Buy now" class="bluebutton">
+			</form>
+		</td>
+	</tr>
+</table>
+</font>
+<hr style="height:1px;border-width:0;color:gray;background-color:gray">
+<hr>
+&copy; Brian Ong Boon Choon
+</td></tr></table>
+</body>
+</html>

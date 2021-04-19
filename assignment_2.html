@@ -1,0 +1,210 @@
+<html>
+	<head>
+		<title>Assignment 2</title>
+		<style>
+		div {
+			color: white;
+			width: 280px;
+			height:180px;
+		}
+		
+		div p {
+			position: relative; 
+			top:50%; 
+			transform: translateY(-50%);
+		}
+		</style>
+		<script>
+			function checkInputs() {
+				var str1;
+				var str2;
+				var str3;
+				var str4;
+				var str5;
+				var str6;
+				var str7;
+				var message = "";
+				
+				var name = document.getElementById("name").value;
+				var date = document.getElementById("date").value;
+				var contact = document.getElementById("contact").value;
+				var card = document.getElementById("card").value;
+				var expmonth = document.getElementById("expmonth").value;
+				var expyear = document.getElementById("expyear").value;
+				var cvv = document.getElementById("cvv").value;
+				
+				if (/^([a-z]|[A-Z]){1}([a-z]|[A-Z]|\s)+$/.test(name) == false) {
+					str1 = "Error with name\n";
+				} 
+				if (/^[0-3][0-9]\/[0-1][0-9]\/\d{4}$/.test(date) == false) {
+					str2 = "Error with Order date\n";
+				}
+				if (/^\(\d{2}\)\d{10}$/.test(contact) == false) {
+					str3 = "Error with contact number";
+				}
+				if (/^(\d{4})-(\d{4})-(\d{4})-(\d{4})$/.test(card) == false) {
+					str4 = "Error with Credit card";
+				}
+				if (/^(0[1-9]|1[0-2])$/.test(expmonth) == false) {
+					str5 = "Error with Expiry month";
+				}
+				if (/^20(1[7-9]|2[0-7])$/.test(expyear) == false) {
+					str6 = "Error with Expiry year";
+				}
+				if (/^\d{3}$/.test(cvv) == false) {
+					str7 = "Error with CVV number";
+				}
+				
+				message = message.concat(str1, str2);
+				
+				if (/^$/.test(message) == true) {
+					alert("Submitted!");
+					return true;
+				} else {
+					alert(message);
+					return false;
+				}
+				
+				return true;
+			}
+			
+			var person1;
+			var person2;
+			
+			function getName() {
+				person1 = prompt("Enter your name: ");
+				
+				if (person1 != null) {
+					document.getElementById("entername1").innerHTML = person1;
+				}
+			}
+			
+			function moveRight() {			
+				if (person2 == null) {
+					person2 = person1;
+					person1 = null;
+					
+					document.getElementById("entername2").innerHTML = person2;
+					document.getElementById("entername1").innerHTML = "";
+				}
+			}
+			
+			function moveLeft() {			
+				if (person1 == null) {
+					person1 = person2;
+					person2 = null;
+					
+					document.getElementById("entername1").innerHTML = person1;
+					document.getElementById("entername2").innerHTML = "";
+				}
+			}
+			
+			function clearBox() {
+				document.getElementById("entername1").innerHTML = "";
+				document.getElementById("entername2").innerHTML = "";
+			}
+		</script>
+	</head>
+	<body>
+		<h3>Part 1</h3>
+		<table border="1">
+			<tr>
+				<th colspan="2", style="text-align:left">STUDENT DETAILS</th>
+			</tr>
+			<tr>
+				<td>STUDENT NUMBER</td>
+				<td>XXX</td>
+			</tr>
+			<tr>
+				<td>STUDENT FAMILY NAME</td>
+				<td>XXX</td>
+			</tr>
+			<tr>
+				<td>STUDENT GIVEN NAMES</td>
+				<td>XXX</td>
+			</tr>
+			<tr>
+				<td>UOW EMAIL</td>
+				<td>XXX</td>
+			</tr>
+			<tr>
+				<th colspan="2", style="text-align:left">ASSIGNMENT DETAILS</th>
+			</tr>
+			<tr>
+				<td>SUBJECT CODE</td>
+				<td>CSIT128</td>
+			</tr>
+			<tr>
+				<td>SUBJECT NAME</td>
+				<td>INTRODUCTION TO WEB TECHNOLOGY</td>
+			</tr>
+			<tr>
+				<td>ASSIGNMENT NUMBER</td>
+				<td>Y202010-A2</td>
+			</tr>
+			<tr>
+				<td>ASSIGNMENT DUE DATE</td>
+				<td>6 Feburary 2020</td>
+			</tr>
+			<tr>
+				<td>LAB TIME</td>
+				<td>12 Feburary 3:30 pm - 6:30 pm</td>
+			</tr>
+		</table>
+		</br>
+		<h3>Part 2</h3>
+		<form>
+			Name:<br>
+			<input type="text" name="name" pattern="^([a-z]|[A-Z]){1}([a-z]|[A-Z]|\s)+$" title="Start with alphabet"><br>
+			Order date:<br>
+			<input type="text" name="date" pattern="^[0-3][0-9]\/[0-1][0-9]\/\d{4}$" title="DD/MM/YYYY"><br>
+			Contact number:<br>
+			<input type="text" name="contact" pattern="^\(\d{2}\)\d{10}$" title="(CC)NNNNNNNNNN"><br>
+			Credit card:<br>
+			<input type="text" name="card" pattern="^(\d{4})-(\d{4})-(\d{4})-(\d{4})$" title="XXXX-XXXX-XXXX-XXXX"><br>
+			Expiry date (month):<br>
+			<input type="text" name="expmonth" pattern="^(0[1-9]|1[0-2])$" title="01 to 12"><br>
+			Expiry date (year):<br>
+			<input type="text" name="expyear" pattern="^20(1[7-9]|2[0-7])$" title="2017 to 2027"><br>
+			CVV number:<br>
+			<input type="text" name="cvv" pattern="^\d{3}$" title="3 digits"><br><br>
+			<input type="submit" value="Submit">
+		</form><br>
+		
+		<h3>Part 3</h3>
+		<form action="" method="get" onSubmit="checkInputs()">
+			Name:<br>
+			<input type="text" id="name" name="name" title="Start with alphabet"><br>
+			Order date:<br>
+			<input type="text" id="date" name="date" title="DD/MM/YYYY"><br>
+			Contact number:<br>
+			<input type="text" id="contact" name="contact" title="(CC)NNNNNNNNNN"><br>
+			Credit card:<br>
+			<input type="text" id="card" name="card" title="XXXX-XXXX-XXXX-XXXX"><br>
+			Expiry date (month):<br>
+			<input type="text" id="expmonth" name="expmonth" title="01 to 12"><br>
+			Expiry date (year):<br>
+			<input type="text" id="expyear" name="expyear" title="2017 to 2027"><br>
+			CVV number:<br>
+			<input type="text" id="cvv" name="cvv" title="3 digits"><br><br>
+			<input type="submit" value="Submit">
+		</form><br>
+		
+		<h3>Part 4</h3>
+		<button onClick="getName()">Start</button> <button onClick="clearBox()">Clear</button><br>
+		<table>
+			<tr>
+				<td align="center">
+					<div style="background-color: black;"><p id="entername1"></p></div>
+				</td>
+				<td>
+					<button onClick="moveRight()">--></button><br>
+					<button onClick="moveLeft()"><--</button>
+				</td>
+				<td align="center">
+					<div style="background-color: grey;"><p id="entername2"></p></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>
